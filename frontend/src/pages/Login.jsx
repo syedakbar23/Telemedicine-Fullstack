@@ -22,8 +22,8 @@ export default function Login({ onLogin }) {
     }
 
     try {
-      const base = import.meta.env.VITE_API_BASE || (import.meta.env.PROD ? '/api' : 'http://localhost:5000/api');
-      const res = await axios.post(`${base}/auth/login`, {
+      const base = import.meta.env.VITE_API_URL || (import.meta.env.PROD ? '/api' : 'http://localhost:5000/api');
+      const res = await axios.post(`${base}/api/auth/login`, {
         email: form.email,
         password: form.password,
       });
